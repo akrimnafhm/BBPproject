@@ -10,9 +10,8 @@ if ($user->isLoggedIn()) {
 
 //jika ada data yg dikirim
 if (isset($_POST['kirim'])) {
-    $email = $_POST['email'];
-
-    $password = $_POST['password'];
+    $email      = $_POST['email'];
+    $password   = $_POST['password'];
 
     // Proses login user
     if ($user->login($email, $password)) {
@@ -22,18 +21,16 @@ if (isset($_POST['kirim'])) {
         $error = $user->getLastError();
     }
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <style></style>
-    <link rel="stylesheet" href="bootstrap/css/style.css" media="screen" title="no title" charset="utf-8">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <style></style>
+        <link rel="stylesheet" href="bootstrap/css/style.css" media="screen" title="no title" charset="utf-8">
+    </head>
 
 <body>
     <div class="login-page">
@@ -51,7 +48,6 @@ if (isset($_POST['kirim'])) {
                 <input type="password" name="password" placeholder="password" required />
                 <button type="submit" name="kirim">login</button>
                 <p class="message">Not registered? <a href="register.php">Create an account</a></p>
-
             </form>
         </div>
     </div>

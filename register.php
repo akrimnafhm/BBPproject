@@ -33,7 +33,6 @@ if (isset($_POST['kirim'])) {
     <meta charset="utf-8">
     <title>Register</title>
     <link rel="stylesheet" href="bootstrap/css/style.css" media="screen" title="no title" charset="utf-8">
-
 </head>
 
 <body>
@@ -58,10 +57,8 @@ if (isset($_POST['kirim'])) {
                 <input type="password" name="password" placeholder="password" required />
                 <button type="submit" name="kirim">create</button>
                 <p class="message">Already registered? <a href="login.php">Sign In</a></p>
-
             </form>
         </div>
     </div>
 </body>
-
 </html>

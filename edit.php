@@ -9,27 +9,20 @@ if (!$user->isLoggedIn()) {
 // Ambil data user saat ini  
 $currentUser = $user->getUser();
 
-
-$id_barang      = $_GET['edit_id'];
+$id_barang   = $_GET['edit_id'];
 
 if (isset($_POST['btn-update'])) {
     $nama           = $_POST['nama'];
-
     $stok          = $_POST['stok'];
-
     $harga           = $_POST['harga'];
 
     if ($brg->updateData($id_barang, $nama, $stok, $harga)) {
         $msg = "<div class='alert alert-info'>
-
                       <strong>Info</strong> Data changed successfully! Click <a href='index.php' style='color: blue'>here</a> to return to the main page.
-
                       </div>";
     } else {
         $msg = "<div class='alert alert-warning'>
-
                       <strong>Warning!</strong> Update Data Failed!
-
                       </div>";
     }
 }
@@ -41,11 +34,8 @@ if (isset($id_barang)) {
 ?>
 
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <title>Halaman Edit Data OpulentGoods</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,26 +43,19 @@ if (isset($id_barang)) {
     <!--Bootstrap-->
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
 <body>
-
     <div class="container">
         <div class="panel panel-primary">
             <div class="panel-heading">Edit Data</div>
             <div class="panel-body">
-
                 <?php
-
                 if (isset($msg)) {
                     echo $msg;
                 }
-
                 ?>
-
             </div>
-
             <div class="clearfix"></div><br />
             <form method='post'>
                 <table class='table table-bordered'>
@@ -80,22 +63,18 @@ if (isset($id_barang)) {
                         <td>ID</td>
                         <td><input type='text' name='id_barang' class='form-control' required maxlength="10" value="<?php echo $id_barang; ?>" readonly></td>
                     </tr>
-
                     <tr>
                         <td>Name</td>
                         <td><input type='text' name='nama' class='form-control' required maxlength="50" value="<?php echo $nama; ?>" autofocus></td>
                     </tr>
-
                     <tr>
                         <td>Stock</td>
                         <td><input type='text' name='stok' class='form-control' value="<?php echo $stok; ?>" required></td>
                     </tr>
-
                     <tr>
                         <td>Price</td>
                         <td><input type='text' name='harga' class='form-control' value="<?php echo $harga; ?>" required></td>
                     </tr>
-
                     <tr>
                         <td colspan="2">
                             <button type="submit" class="btn btn-primary" name="btn-update">Save

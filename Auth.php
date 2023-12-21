@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -48,7 +47,6 @@ class Auth
             $stmt->bindParam(":name", $name);
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":pass", $hashPasswd);
-
             $stmt->execute();
 
             return true;
@@ -59,11 +57,9 @@ class Auth
                 //errorInfor[0] berisi informasi error tentang query sql yg baru dijalankan
                 //23000 adalah kode error ketika ada data yg sama pada kolom yg di set unique
                 $this->error = "Email sudah digunakan!";
-
                 return false;
             } else {
                 echo $e->getMessage();
-
                 return false;
             }
         }
@@ -144,7 +140,6 @@ class Auth
             return $stmt->fetch();
         } catch (PDOException $e) {
             echo $e->getMessage();
-
             return false;
         }
     }
